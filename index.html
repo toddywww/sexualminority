@@ -1,0 +1,246 @@
+<html lang="en"><!DOCTYPE html>
+
+ <!-- 
+/* 
+  
+This document contains all instructions which appear in the paradigm, along with some basic functionality. You can change all text by following the instructions below. 
+
+If you don't have experience with programming, it is important that you alter only the plain text, as indicated in the instructions, and leave any functional elements intact.
+*/ 
+--> 
+
+<meta charset="utf-8">
+<title>Intro</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Stylesheets -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.10/alertify.core.css" rel="stylesheet">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.10/alertify.default.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+<!-- For IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+  </script>
+<![endif]-->
+
+<!-- Javascript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.3.0/mustache.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.10/alertify.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js"></script>
+<script src="shortcut.js"></script>
+<script src="main.js"></script>
+<script type="text/javascript" src="profiles.json"></script>
+
+</head>
+
+<body oncontextmenu="return false;">
+<div class="container">
+
+
+
+<div id="intro" style="display:none;" class="instr">
+ <!-- 
+/* 
+  
+**Intro**
+---------
+You can edit this text using basic HTML elements for styling (e.g., <br>, <h3>).
+
+*/ 
+--> <h3>欢迎参与我们的实验：</h3>
+
+  你与11位女性参与者被分到一个小组中。 <br>
+  你们将一同在线上完成一些简单的任务。   
+  <br><br>
+  首先，每位参与实验的人将选择一张图片作为 “头像”， <br>
+  并写一段简短的自我介绍。
+  <br><br>
+  在开始实验任务之前，你有三分钟的时间与其他参与者进行互动。 <br>
+  你可以阅读其他人的自我介绍并进行点赞， <br>
+  同时，其他人也可以对你的自我介绍进行点赞。
+  <br><br>
+  后面将有更具体的说明。<br><br>
+  <b>如果你准备好了，便可以按下“继续”按钮开始</b><br><br>
+  <button type="submit" id="submit_intro">继续</button>
+</div>
+
+
+
+<div id="name" style="display:none;" class="instr">
+<!-- 
+/* 
+  
+**Username**
+---------
+You can edit the instructions text for entering usernames below.
+
+*/ 
+-->
+	<h3>请输入你的用户名</h3>
+	可以是你的昵称、网名、首字母缩写等。在后面的任务中，你们都可以看见彼此的用户名。<br><br>
+	
+	<input type="text" id="username"  autocomplete="off" /><br>	<br>
+	<button type="submit"  id="submit_username">提交</button>
+</div>
+
+
+
+<div id="avatar" style="display:none;">	
+<!-- 
+/* 
+  
+**Avatar choice**
+---------
+You can edit the instructions text. The text "Your choice of avatar will not be recorded or analyzed" depends on whether you record the choice of avatar.
+
+*/ 
+-->	<h3>请从下图中任选一个头像</h3>
+	在接下来的小组任务中，这张头像将作为你的形象呈现给其他参与者。 <br>
+        但你选择的头像不会影响到实验，请随意选择。
+	<br><br>
+	<div class="avatars"></div>
+	<br><button type="submit"  id="submit_avatar">提交</button>
+	<br><br>
+</div>	
+
+
+<div id="text" style="display:none;" class="instr">	
+<!-- 
+/* 
+  
+**Description entry**
+---------
+You can edit the instructions text. 
+
+*/ 
+-->	<h3> 自我介绍 </h3>
+	请你写一段向小组其他成员介绍自己的话。 <br>
+	你的自我介绍里可以写下任何你想分享的、介绍自己的内容。 <br>
+        其中，自我介绍必须至少含有一句对你自己的<b>性取向</b>的介绍。
+        <br><br>	
+	<textarea id="description" autocomplete="off" /></textarea><br>
+	<span id="count">还可以输入字数: 400</span><br><br>
+	<button type="submit" id="submit_text">提交</button>
+</div>	
+
+
+
+<div id="fb_intro" style="display:none;" class="instr">
+<!-- 
+/* 
+  
+**Task instructions**
+---------
+You can edit the instructions text. The prompt to try and form an impression of the other players is recommended in all ostacism paradigms. Defining the action of "liking" is also recommended. The information regarding task duration can be adjusted to match the actual duration you have set.
+
+*/ 
+-->  <h3>小组介绍</h3>
+  点击<b>“登录”</b>按钮进行网络连接后，你就可以看见其他小组成员的自我介绍。 <br><br>
+  你可以阅读小组成员的自我介绍，也可以通过点击“喜欢”按钮， <br>
+  对他人的自我介绍进行“点赞” (类似于微博、朋友圈里的“赞”)。 <br> 
+  <br>
+  在阅读别人的自我介绍与点赞的过程中， <br>
+  请你尽量尝试对各位小组成员们形成一些印象： <br>
+  你可以想象她们在现实生活中的样子， <br>
+  她们的声音，她们具体是什么样的人，以及你可能会怎样与她们相处。
+  <br><br>这项任务一共将持续 3 分钟，同时对整个实验尤为重要。因此，请你务必集中注意力，
+  <br>不要退出或切换页面，也不要做无关的事情 (例如看手机)。 <br>
+  在接下来的任务里，会出现有关其他成员自我介绍以及点赞数量的问题。<br>
+  <b>请一定认真阅读所有人的自我介绍。</b>
+  <br><br><b>如果没有任何问题，你就可以点击下面的按钮，继续实验。</b><br>
+  <br>
+  <button type="submit"  id="submit_fb_intro">登录</button>
+</div>
+
+
+
+<div id="fb_login" style="display:none;" class="instr">
+  <h3>网络连接中……</h3>
+  请稍候，我们正在将你与其他的小组成员进行连接。<br><br>
+  <img class="load" src='ajax-loader.gif' id="loader">
+  <div id="msg_all_done" style="display:none;">
+  <br>
+  	<b>与所有小组成员成功连接，请点击“继续”按钮进入下一步。</b><br><br>
+  	<button type="submit"  id="submit_fb_login">继续</button>
+  </div>
+</div>
+
+
+<!-- 
+/* 
+  
+**In-task instructions and timer**
+---------
+You can edit the instructions text. 
+
+*/ 
+-->
+<div id="task" style="display:none;">
+	<div id="countdown"><span class="secs" style="display: none;"></span>如果你喜欢某位小组成员的自我介绍，可以点“喜欢”进行点赞。<br><br>剩余时间:<br><span id="timer" class="cntr label label-info"></span>
+	<br>
+	<button type="submit" id='final-continue' style="display:none;">继续</button>	
+	</div>
+</div>
+
+
+<script type="template/text" id="usertmp">
+  {{#posts}}
+    
+    <div class="entry">
+    <div class="tophalf">
+
+    	<img src="{{avatar}}" class="avatar">
+    	<h3>{{username}}</h3>
+
+    	<div class="main">
+    		<p>{{text}}</p>
+    	</div>
+
+    	<br style="clear:both;">
+
+    </div>	
+
+    <div class="bottomhalf">
+    	喜欢 <span class="badge badge-custom userslikes" data-likes="{{likes}}" data-usernames="{{usernames}}">0</span>
+    </div>
+    </div>
+
+  {{/posts}}  
+</script>
+
+
+<script type="template/text" id="otherstmp">
+  {{#posts}}
+    <div class="entry">
+    <div class="tophalf">
+
+    	<img src="{{avatar}}" class="avatar">
+        <h3>{{username}}</h3>
+    	
+    	<div class="main">
+    		
+    		<p>{{text}}</p>
+    	</div>
+
+    	<br style="clear:both;">
+
+    </div>	
+
+    <div class="bottomhalf">
+    	喜欢 <span class="badge badge-custom otherslikes" data-likes="{{likes}}">0</span>
+    	<button type="submit" class="btn pull-right btn-like btn-custom btn-deround">喜欢 <i class="icon-thumbs-up icon-white"></i></button>
+    </div>
+
+    </div>
+  {{/posts}}  
+</script>
+
+
+</body>
+</html>
